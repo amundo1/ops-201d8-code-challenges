@@ -8,17 +8,24 @@
 # Declaration of variables
 loginHist=last
 messageVar="This is the login history."
+i=0
+
 
 # Declaration of functions
 loginHistOutput () {
     $loginHist
     echo
-    echo $messageVar
+    echo -e $messageVar "\n\n"
+    echo -e "**********************************************************************\n"
+    echo -e $1 '\n\n'
+    echo -e "***********************************************************************\n"
 
 
 }
 
 # Main
-loginHistOutput
+loginHistOutput 1
+loginHistOutput 2
+loginHistOutput 3
 
 # End
