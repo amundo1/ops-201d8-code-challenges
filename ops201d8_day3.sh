@@ -6,13 +6,19 @@
 # Purpose:                      Demo Bash script
 
 # Declaration of variables
-
-
+loginHist=last
+messageVar="This is the login history."
 
 # Declaration of functions
+loginHistOutput () {
+    $loginHist
+    echo
+    echo $messageVar
 
+
+}
 
 # Main
-
+loginHistOutput
 
 # End
