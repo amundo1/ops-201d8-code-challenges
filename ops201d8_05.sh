@@ -17,22 +17,24 @@ pid=""
 
 # Declaration of functions
 
-        # Creates array of directories and creates a respective text file in each directory
+        # Creates a function in an infinite while loop where it:
+         #initiates a process (ping), displays all processes, requests user input for ping process ID to kill
+         #kills process
 killPID () {
-while true
+while true #infinite while loop
 do
 
-ping 8.8.8.8 &>/dev/null &
-ps aux
-echo -e "Please choose ping PID to kill: \n"
-read pid
-kill -9 $pid
+ping 8.8.8.8 &>/dev/null & #starts ping process in background
+ps aux #displays processes
+echo -e "Please choose ping PID to kill: \n" #requests PID from user
+read pid #reads user input and assigns string to pid variable
+kill -9 $pid #kills process identified by user
 done
 }
 
 # Main
 
 
-killPID
+killPID #calls function
 
 # End
