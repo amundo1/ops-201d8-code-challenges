@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Script Name:                  Ops Challenge - Day05
+# Script Name:                  Ops Challenge - Day0
 # Author:                       Adrian Mundo
-# Date of latest revision:      20230428
+# Date of latest revision:      20230501
 # Purpose:                
 #Write a script that:
 #Detects if a file or directory exists, then creates it if it does not exist.
