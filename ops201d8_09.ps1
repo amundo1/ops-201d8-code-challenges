@@ -10,3 +10,27 @@ Print to the screen all events with ID of 16 from the System event log.
 Print to the screen the most recent 20 entries from the System event log.’
 Print to the screen all sources of the 500 most recent entries in the System event log. Ensure that the full lines are displayed (get rid of the … and show the entire text).
 #>
+
+$desktopPath = [Environment]::GetFolderPath("Desktop")
+$oneDayLog = Get-EventLog -Logname System -After (GET-Date).AddDays(-1)
+$sysErrorLog =  Get-EventLog -Logname System -EntryType Error
+$printEventID16 = Get-EventLog -Logname System -InstanceId 16
+$top20Events = Get-EventLog -Logname System -Newest 20
+$eventSources500 = Get-EventLog -Logname System -Newest 500 | Group-Object -Property Source -NoElement 
+
+Write-Output "`n`nPrinting System events in last 24 Hours to last_24.txt `n" 
+Out-File -FilePath $desktopPath\last_24.txt -InputObject $oneDayLog
+
+Write-Output "Printing System errors to errors.txt `n" 
+Out-File -FilePath $desktopPath\error.txt -InputObject $sysErrorLog
+
+Write-Output "Printing System events with Event ID 16 `n" 
+$printEventID16
+
+Write-Output "`n`n"
+
+Write-Output "Printing Latest 20 System events `n" 
+$top20Events
+
+Write-Output "Printing Latest 500 System events Sources `n" 
+$eventSources500
