@@ -1,8 +1,8 @@
 <# Powershell
 
-# Script Name:                  Ops Challenge - Day 09
+# Script Name:                  Ops Challenge - Day 10
 # Author:                       Adrian Mundo
-# Date of latest revision:      20230504
+# Date of latest revision:      20230505
 #Purpose: Create a Powershell script that performs these operations on separate lines. The overall script is not designed to operate holistically, but rather act as a reference for how to execute various interesting operations with the process family of Powershell commandlets. Clearly indicate with comments each component below.
 Print to the terminal screen all active processes ordered by highest CPU time consumption at the top.
 Print to the terminal screen all active processes ordered by highest Process Identification Number at the top.
