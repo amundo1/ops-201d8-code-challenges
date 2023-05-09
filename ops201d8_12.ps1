@@ -7,15 +7,26 @@
 Use Select-String cmdlet to only return the IPv4 address string and no other extraneous information.
 #>
 
-# Define Variables
+# Declaration of variables
+$desktopPath = [Environment]::GetFolderPath("Desktop")
+$netReportFile = "network_report.txt"
+$ipconfAll = ipconfig /all
 
-# Define Functions
+# Declaration of functions
+function netReport {
+    Out-File -FilePath $desktopPath\$netReportFile -InputObject $ipconfAll 
+    Select-String -Path $desktopPath\$netReportFile -Pattern "IPv4"
 
-#MAIN
+    Write-Output "`n`n`n********Deleting Network_Report.txt**************`n`n`n"
+    Start-Sleep 2
+    Remove-Item $desktopPath\$netReportFile
+}
+# Main
+
+netReport
 
 
 
 
 
-
-#END
+# End
